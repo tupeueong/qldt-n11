@@ -6,13 +6,15 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import javax.swing.JOptionPane;
 import dao.UserDao;
 import main.Login;
 import model.User;
-import view.ComplexSubjectView;
+import view.ComplexSubjectFrame;
+
 
 public class LoginController {
+    
     private UserDao userDao;
     private Login view;
 
@@ -24,13 +26,16 @@ public class LoginController {
     public void login(String username, String password) {
         User user = new User(username, password);
         if (userDao.checkUser(user)) {
-            ComplexSubjectView complexSubjectView = new ComplexSubjectView();
-            ComplexSubjectController complexSubjectController = new ComplexSubjectController(complexSubjectView);
-            complexSubjectController.showComplexSubjectView();
-            view.setVisible(false);
+            ComplexSubjectFrame complexSubjectFrame = new ComplexSubjectFrame();  
+            complexSubjectFrame.setVisible(true);
+            
         } else {
-            view.showMessage("username hoặc password không đúng.");
+            JOptionPane.showMessageDialog(view, "Username hoặc password không đúng.", "Lỗi Đăng Nhập", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    private void showError(String message) {
+        view.showMessage(message);
     }
 
     class LoginListener implements ActionListener {

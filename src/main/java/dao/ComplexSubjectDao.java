@@ -17,7 +17,7 @@ import model.ComplexSubjectXML;
 import utils.FileUtils;
 
 public class ComplexSubjectDao {
-    private static final String COMPLEX_SUBJECT_FILE_NAME = "D:/Downloads/qldt-20241022T135445Z-001/qldt/src/main/java/DB/complexSubject.xml";
+    private static final String COMPLEX_SUBJECT_FILE_NAME = "/src/main/java/DB/complexSubject.xml";
     private List<ComplexSubject> listComplexSubjects;
 
     public ComplexSubjectDao() {

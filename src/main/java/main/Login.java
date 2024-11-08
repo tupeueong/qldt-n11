@@ -20,7 +20,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        setBackground(new Color(0, 0, 0, 0));
+        setBackground(new Color(0, 0, 0, 0));     
         controller = new LoginController(this); // Khởi tạo controller
     }
 
@@ -72,6 +72,11 @@ public class Login extends javax.swing.JFrame {
 
         cmdLogin.setForeground(new java.awt.Color(255, 255, 255));
         cmdLogin.setText("SIGN IN");
+        cmdLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
@@ -139,6 +144,11 @@ public class Login extends javax.swing.JFrame {
     private void txUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txUserActionPerformed
         handleLogin(); // Gọi phương thức xử lý đăng nhập
     }//GEN-LAST:event_txUserActionPerformed
+
+    private void cmdLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLoginActionPerformed
+        // TODO add your handling code here:
+        handleLogin();
+    }//GEN-LAST:event_cmdLoginActionPerformed
 
     private void handleLogin() {
         String username = txUser.getText();
