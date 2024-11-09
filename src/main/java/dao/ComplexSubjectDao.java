@@ -10,7 +10,7 @@ import model.ComplexSubjectXML;
 import utils.FileUtils;
 
 public class ComplexSubjectDao {
-    private static final String COMPLEX_SUBJECT_FILE_NAME = "D:/Download(D)/Documents/NetbeansProjects/login-ui/src/main/java/DB/complexSubject.xml";
+    private static final String COMPLEX_SUBJECT_FILE_NAME = "login-ui/src/main/java/DB/complexSubject.xml";
     private List<ComplexSubject> listComplexSubjects;
 
     public ComplexSubjectDao() {
