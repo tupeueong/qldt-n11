@@ -26,16 +26,13 @@ public class Menu extends javax.swing.JPanel {
     }
     public void initMenu(EventMenu event) {
         this.event = event;
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Dashboard - Thống kê", 0);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/2.png")), "Quản Lý Đối Tượng", 1);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Tìm kiếm", 2);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/4.png")), "Report", 3);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/5.png")), "Note", 4);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/6.png")), "Xoá", 5);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/7.png")), "Thêm", 6);      
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/8.png")), "Setting", 7);
+        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Dashboard", 0);
+        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Quản Lý Đối Tượng", 1); 
+        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/4.png")), "Thống kê", 2);
+        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/5.png")), "Note", 3);
         addEmpty();
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/logout.png")), "Logout", 8);
+        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/8.png")), "Setting", 4);
+        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/logout.png")), "Logout", 5);
     }
     private void addEmpty() {
         panelMenu.add(new JLabel(), "push");

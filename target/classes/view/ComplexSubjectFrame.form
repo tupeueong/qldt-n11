@@ -54,7 +54,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="header1" pref="1064" max="32767" attributes="0"/>
+              <Component id="header1" pref="1309" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <Component id="menu1" min="-2" pref="187" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
@@ -69,7 +69,7 @@
                   <Component id="header1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="menu1" pref="555" max="32767" attributes="0"/>
+                      <Component id="menu1" pref="695" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="body" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>

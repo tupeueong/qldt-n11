@@ -1,8 +1,11 @@
-
 package view;
 
 import com.raven.event.EventMenu;
 import form.Form;
+import form.Form_1;
+import form.Form_2;
+import form.Form_3;
+
 import java.awt.Color;
 import java.awt.Component;
 
@@ -17,7 +20,9 @@ public class ComplexSubjectFrame extends javax.swing.JFrame {
             @Override
             public void selected(int index) {
                 if(index == 0){
-                    System.out.println("Dashboard form");
+                    showForm(new Form_1());                 
+                }else if(index == 1){
+                    showForm(new Form_3());
                 }else if(index == 8){
                     System.out.println("Logout");
                 }else{
@@ -25,9 +30,13 @@ public class ComplexSubjectFrame extends javax.swing.JFrame {
                       
                 }
             }
+            
              
         };
         menu1.initMenu(event);
+        showForm(new Form_1());
+        showForm(new Form_2());
+        showForm(new Form_3());
     }
 
     private void showForm(Component com){
@@ -36,7 +45,7 @@ public class ComplexSubjectFrame extends javax.swing.JFrame {
         body.revalidate();
         body.repaint();
     }
-
+     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -60,7 +69,7 @@ public class ComplexSubjectFrame extends javax.swing.JFrame {
         roundPanel1.setLayout(roundPanel1Layout);
         roundPanel1Layout.setHorizontalGroup(
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header1, javax.swing.GroupLayout.DEFAULT_SIZE, 1064, Short.MAX_VALUE)
+            .addComponent(header1, javax.swing.GroupLayout.DEFAULT_SIZE, 1309, Short.MAX_VALUE)
             .addGroup(roundPanel1Layout.createSequentialGroup()
                 .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
@@ -71,12 +80,10 @@ public class ComplexSubjectFrame extends javax.swing.JFrame {
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundPanel1Layout.createSequentialGroup()
                 .addComponent(header1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addGroup(roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(menu1, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
                     .addGroup(roundPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(menu1, javax.swing.GroupLayout.DEFAULT_SIZE, 555, Short.MAX_VALUE))
-                    .addGroup(roundPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
                         .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(10, 10, 10))))
         );

@@ -70,7 +70,16 @@
             <artifactId>miglayout</artifactId>
             <version>4.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE230</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.2</version>
+        </dependency>
 
     </dependencies>
 </project>

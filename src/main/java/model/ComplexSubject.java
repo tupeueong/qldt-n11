@@ -1,11 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.io.Serializable;
@@ -13,33 +5,35 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import java.io.Serializable;
-
 @XmlRootElement(name = "complexSubject")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ComplexSubject implements Serializable {
-    private static final long serialVersionUID = 1L;
     private int id;
-    private String name;
-    private String birthDate;
-    private String address;
-    private String permanentAddress;
-    private String relatives;
-    private String subjectType;
+    private String hoTen; // Họ tên
+    private String ngaySinh; // Ngày tháng năm sinh
+    private String gioiTinh; // Giới tính
+    private String noio; // Nơi ở
+    private String hoKhauThuongTru; // Hộ khẩu thường trú
+    private String thanNhan; // Thân nhân
+    private String loaiDoiTuong; // Loại đối tượng (Tiền án, tiền sự, đối tượng nghiện, v.v..)
 
-    public ComplexSubject() {
+    // Constructor với tất cả các tham số
+    public ComplexSubject(int id, String hoTen, String ngaySinh, String gioiTinh, String noio, String hoKhauThuongTru, String thanNhan, String loaiDoiTuong) {
+    this.id = id;
+    this.hoTen = hoTen;
+    this.ngaySinh = ngaySinh;
+    this.gioiTinh = gioiTinh; // Khởi tạo giới tính
+    this.noio = noio; // Khởi tạo nơi ở
+    this.hoKhauThuongTru = hoKhauThuongTru;
+    this.thanNhan = thanNhan;
+    this.loaiDoiTuong = loaiDoiTuong;
+}
+
+    // Constructor mặc định
+    public ComplexSubject() {   
     }
 
-    public ComplexSubject(int id, String name, String birthDate, String address, String permanentAddress, String relatives, String subjectType) {
-        this.id = id;
-        this.name = name;
-        this.birthDate = birthDate;
-        this.address = address;
-        this.permanentAddress = permanentAddress;
-        this.relatives = relatives;
-        this.subjectType = subjectType;
-    }
-
+    // Getter và Setter
     public int getId() {
         return id;
     }
@@ -48,52 +42,59 @@ public class ComplexSubject implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getHoTen() {
+        return hoTen;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHoTen(String hoTen) {
+        this.hoTen = hoTen;
     }
 
-    public String getBirthDate() {
-        return birthDate;
+    public String getNgaySinh() {
+        return ngaySinh;
     }
 
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
+    public void setNgaySinh(String ngaySinh) {
+        this.ngaySinh = ngaySinh;
     }
 
-    public String getAddress() {
-        return address;
+    public String getNoio() {
+        return noio;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setNoio(String noio) {
+        this.noio = noio; // Sửa lại để sử dụng tham số đúng
     }
 
-    public String getPermanentAddress() {
-        return permanentAddress;
+    public String getHoKhauThuongTru() {
+        return hoKhauThuongTru;
     }
 
-    public void setPermanentAddress(String permanentAddress) {
-        this.permanentAddress = permanentAddress;
+    public void setHoKhauThuongTru(String hoKhauThuongTru) {
+        this.hoKhauThuongTru = hoKhauThuongTru;
     }
 
-    public String getRelatives() {
-        return relatives;
+    public String getThanNhan() {
+        return thanNhan;
     }
 
-    public void setRelatives(String relatives) {
-        this.relatives = relatives;
+    public void setThanNhan(String thanNhan) {
+        this.thanNhan = thanNhan;
     }
 
-    public String getSubjectType() {
-        return subjectType;
+    public String getLoaiDoiTuong() {
+        return loaiDoiTuong;
     }
 
-    public void setSubjectType(String subjectType) {
-        this.subjectType = subjectType;
+    public void setLoaiDoiTuong(String loaiDoiTuong) {
+        this.loaiDoiTuong = loaiDoiTuong;
+    }
+
+    public String getGioiTinh() {
+        return gioiTinh; // Phương thức get
+    }
+
+    public void setGioiTinh(String gioiTinh) {
+        this.gioiTinh = gioiTinh; // Phương thức set
     }
 }
-

@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package dao;
 
-/**
- *
- * @author DTC
- */
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -17,7 +10,7 @@ import model.ComplexSubjectXML;
 import utils.FileUtils;
 
 public class ComplexSubjectDao {
-    private static final String COMPLEX_SUBJECT_FILE_NAME = "/src/main/java/DB/complexSubject.xml";
+    private static final String COMPLEX_SUBJECT_FILE_NAME = "D:/Download(D)/Documents/NetbeansProjects/login-ui/src/main/java/DB/complexSubject.xml";
     private List<ComplexSubject> listComplexSubjects;
 
     public ComplexSubjectDao() {
@@ -57,12 +50,12 @@ public class ComplexSubjectDao {
         int size = listComplexSubjects.size();
         for (int i = 0; i < size; i++) {
             if (listComplexSubjects.get(i).getId() == complexSubject.getId()) {
-                listComplexSubjects.get(i).setName(complexSubject.getName());
-                listComplexSubjects.get(i).setBirthDate(complexSubject.getBirthDate());
-                listComplexSubjects.get(i).setAddress(complexSubject.getAddress());
-                listComplexSubjects.get(i).setPermanentAddress(complexSubject.getPermanentAddress());
-                listComplexSubjects.get(i).setRelatives(complexSubject.getRelatives());
-                listComplexSubjects.get(i).setSubjectType(complexSubject.getSubjectType());
+                listComplexSubjects.get(i).setHoTen(complexSubject.getHoTen());
+                listComplexSubjects.get(i).setNgaySinh(complexSubject.getNgaySinh());
+                listComplexSubjects.get(i).setNoio(complexSubject.getNoio());
+                listComplexSubjects.get(i).setHoKhauThuongTru(complexSubject.getHoKhauThuongTru());
+                listComplexSubjects.get(i).setThanNhan(complexSubject.getThanNhan());
+                listComplexSubjects.get(i).setLoaiDoiTuong(complexSubject.getLoaiDoiTuong());
                 writeListComplexSubjects(listComplexSubjects);
                 break;
             }
@@ -87,21 +80,51 @@ public class ComplexSubjectDao {
         return false;
     }
 
+//    public void sortComplexSubjectByName() {
+//        Collections.sort(listComplexSubjects, new Comparator<ComplexSubject>() {
+//            public int compare(ComplexSubject cs1, ComplexSubject cs2) {
+//                return cs1.getHoTen().compareTo(cs2.getHoTen());
+//            }
+//        });
+//    }
     public void sortComplexSubjectByName() {
-        Collections.sort(listComplexSubjects, new Comparator<ComplexSubject>() {
-            public int compare(ComplexSubject cs1, ComplexSubject cs2) {
-                return cs1.getName().compareTo(cs2.getName());
-            }
-        });
-    }
+    Collections.sort(listComplexSubjects, new Comparator<ComplexSubject>() {
+        public int compare(ComplexSubject cs1, ComplexSubject cs2) {
+            String name1 = cs1.getHoTen();
+            String name2 = cs2.getHoTen();
 
+            // Kiểm tra giá trị null
+            if (name1 == null && name2 == null) return 0; // Cả hai đều null
+            if (name1 == null) return 1; // name1 là null, coi nó lớn hơn
+            if (name2 == null) return -1; // name2 là null, coi nó nhỏ hơn
+
+            return name1.compareTo(name2); // So sánh nếu cả hai đều không null
+        }
+    });
+}
+
+//    public void sortComplexSubjectByBirthDate() {
+//        Collections.sort(listComplexSubjects, new Comparator<ComplexSubject>() {
+//            public int compare(ComplexSubject cs1, ComplexSubject cs2) {
+//                return cs1.getNgaySinh().compareTo(cs2.getNgaySinh());
+//            }
+//        });
+//    }
     public void sortComplexSubjectByBirthDate() {
-        Collections.sort(listComplexSubjects, new Comparator<ComplexSubject>() {
-            public int compare(ComplexSubject cs1, ComplexSubject cs2) {
-                return cs1.getBirthDate().compareTo(cs2.getBirthDate());
-            }
-        });
-    }
+    Collections.sort(listComplexSubjects, new Comparator<ComplexSubject>() {
+        public int compare(ComplexSubject cs1, ComplexSubject cs2) {
+            String date1 = cs1.getNgaySinh();
+            String date2 = cs2.getNgaySinh();
+
+            // Kiểm tra giá trị null
+            if (date1 == null && date2 == null) return 0; // Cả hai đều null
+            if (date1 == null) return 1; // date1 là null, coi nó lớn hơn
+            if (date2 == null) return -1; // date2 là null, coi nó nhỏ hơn
+
+            return date1.compareTo(date2); // So sánh nếu cả hai đều không null
+        }
+    });
+}
 
     public List<ComplexSubject> getListComplexSubjects() {
         return listComplexSubjects;
@@ -111,4 +134,3 @@ public class ComplexSubjectDao {
         this.listComplexSubjects = listComplexSubjects;
     }
 }
-
