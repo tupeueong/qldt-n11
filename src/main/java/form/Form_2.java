@@ -60,8 +60,6 @@ public class Form_2 extends javax.swing.JPanel {
             return "Nam";
         } else if (jRadioButton2.isSelected()) {
             return "Nữ";
-        } else if (jRadioButton3.isSelected()) {
-            return "Khác"; // Nếu có lựa chọn khác
         }
         return "Chưa chọn"; // Trả về nếu không có lựa chọn nào
     }
@@ -82,6 +80,7 @@ public class Form_2 extends javax.swing.JPanel {
         jRadioButton2 = new javax.swing.JRadioButton();
         jTextField1 = new javax.swing.JTextField();
         buttonGroup1 = new javax.swing.ButtonGroup();
+        ChonNgay = new com.raven.datechooser.DateChooser();
         roundPanel1 = new swing.complex.RoundPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -102,6 +101,7 @@ public class Form_2 extends javax.swing.JPanel {
         txHokhau = new javax.swing.JTextArea();
         txAdd = new javax.swing.JButton();
         txReset = new javax.swing.JButton();
+        txNgaySinh = new javax.swing.JTextField();
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,6 +129,8 @@ public class Form_2 extends javax.swing.JPanel {
         });
 
         jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        ChonNgay.setForeground(new java.awt.Color(102, 102, 102));
 
         roundPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -167,7 +169,6 @@ public class Form_2 extends javax.swing.JPanel {
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setSelected(true);
         jRadioButton1.setText("Nam");
 
         buttonGroup1.add(jRadioButton3);
@@ -201,7 +202,7 @@ public class Form_2 extends javax.swing.JPanel {
         txHokhau.setRows(5);
         jScrollPane2.setViewportView(txHokhau);
 
-        txAdd.setText("Add");
+        txAdd.setText("Thêm");
         txAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txAddActionPerformed(evt);
@@ -249,13 +250,15 @@ public class Form_2 extends javax.swing.JPanel {
                             .addComponent(txAdd)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txdoituong, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txthannhan, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txthannhan, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txdoituong, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                                        .addComponent(txNgaySinh)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -281,12 +284,13 @@ public class Form_2 extends javax.swing.JPanel {
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel11))
+                    .addComponent(jLabel11)
+                    .addComponent(txNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txAdd)
                             .addComponent(txReset))
@@ -343,14 +347,14 @@ public class Form_2 extends javax.swing.JPanel {
 //       String Noio = txNoio.getText().trim();
 //       String loaiDoiTuong = txdoituong.getText().trim();
 //       String thanNhan = txthannhan.getText().trim();
-         String hoTen = txName.getText().trim();
-    String ngaySinh = jTextField1.getText().trim(); // Giả sử đây là trường ngày sinh
+    String hoTen = txName.getText().trim();
+    String ngaySinh = txNgaySinh.getText().trim(); // Giả sử đây là trường ngày sinh
     String noiO = txNoio.getText().trim();
     String hoKhauThuongTru = txHokhau.getText().trim();
     String thanNhan = txthannhan.getText().trim();
     String loaiDoiTuong = txdoituong.getText().trim();
     String gioiTinh = getSelectedGender(); // Lấy giới tính đã chọn
-
+    
     // Tạo đối tượng mới
     ComplexSubject newSubject = new ComplexSubject();
     newSubject.setHoTen(hoTen);
@@ -375,7 +379,7 @@ public class Form_2 extends javax.swing.JPanel {
 
     // Reset các trường nhập liệu
     txResetActionPerformed(evt);
-           
+          
     }//GEN-LAST:event_txAddActionPerformed
     
     private void txdoituongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txdoituongActionPerformed
@@ -397,6 +401,7 @@ public class Form_2 extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.raven.datechooser.DateChooser ChonNgay;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -420,6 +425,7 @@ public class Form_2 extends javax.swing.JPanel {
     private javax.swing.JButton txAdd;
     private javax.swing.JTextArea txHokhau;
     private javax.swing.JTextField txName;
+    private javax.swing.JTextField txNgaySinh;
     private javax.swing.JTextArea txNoio;
     private javax.swing.JButton txReset;
     private javax.swing.JTextField txdoituong;

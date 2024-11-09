@@ -138,15 +138,17 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txPasswordActionPerformed
-        handleLogin(); // Gọi phương thức xử lý đăng nhập
+        handleLogin();
+        this.dispose();// Gọi phương thức xử lý đăng nhập
     }//GEN-LAST:event_txPasswordActionPerformed
 
     private void txUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txUserActionPerformed
-        handleLogin(); // Gọi phương thức xử lý đăng nhập
+        handleLogin();
+        this.dispose();// Gọi phương thức xử lý đăng nhập
     }//GEN-LAST:event_txUserActionPerformed
 
     private void cmdLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLoginActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
         handleLogin();
     }//GEN-LAST:event_cmdLoginActionPerformed
 

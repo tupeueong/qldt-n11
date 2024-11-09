@@ -2,12 +2,32 @@
 <complexSubjects>
     <complexSubject>
         <id>1</id>
-        <hoTen>nguyen huu dang khoa</hoTen>
-        <ngaySinh></ngaySinh>
+        <hoTen>Nguyễn hữu đăng khoa</hoTen>
+        <ngaySinh>09-11-2024</ngaySinh>
         <gioiTinh>Nam</gioiTinh>
-        <noio>Yen bai</noio>
-        <hoKhauThuongTru>ha noi</hoKhauThuongTru>
-        <thanNhan>Nguyen duc manh</thanNhan>
-        <loaiDoiTuong>Nghien</loaiDoiTuong>
+        <noio>yên bái</noio>
+        <hoKhauThuongTru>hà nội</hoKhauThuongTru>
+        <thanNhan>An</thanNhan>
+        <loaiDoiTuong>Nghiện</loaiDoiTuong>
+    </complexSubject>
+    <complexSubject>
+        <id>2</id>
+        <hoTen>nguyễn văn a</hoTen>
+        <ngaySinh>09-11-2024</ngaySinh>
+        <gioiTinh>Nam</gioiTinh>
+        <noio>hn</noio>
+        <hoKhauThuongTru>hn</hoKhauThuongTru>
+        <thanNhan>khoa</thanNhan>
+        <loaiDoiTuong>Nghiện</loaiDoiTuong>
+    </complexSubject>
+    <complexSubject>
+        <id>3</id>
+        <hoTen>nguyễn đức mạnh 5</hoTen>
+        <ngaySinh>09-11-2024</ngaySinh>
+        <gioiTinh>Nam</gioiTinh>
+        <noio>hà nội</noio>
+        <hoKhauThuongTru>hà nội</hoKhauThuongTru>
+        <thanNhan></thanNhan>
+        <loaiDoiTuong>Tiền án</loaiDoiTuong>
     </complexSubject>
 </complexSubjects>

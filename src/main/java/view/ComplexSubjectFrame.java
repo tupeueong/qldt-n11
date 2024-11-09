@@ -1,13 +1,16 @@
 package view;
 
 import com.raven.event.EventMenu;
+import dao.ComplexSubjectDao;
 import form.Form;
 import form.Form_1;
 import form.Form_2;
 import form.Form_3;
+import form.Form_4;
 
 import java.awt.Color;
 import java.awt.Component;
+import model.ComplexSubject;
 
 public class ComplexSubjectFrame extends javax.swing.JFrame {
 
@@ -23,8 +26,8 @@ public class ComplexSubjectFrame extends javax.swing.JFrame {
                     showForm(new Form_1());                 
                 }else if(index == 1){
                     showForm(new Form_3());
-                }else if(index == 8){
-                    System.out.println("Logout");
+                }else if(index == 5){
+                    logout();
                 }else{
                     showForm(new Form(index));
                       
@@ -44,6 +47,41 @@ public class ComplexSubjectFrame extends javax.swing.JFrame {
         body.add(com);
         body.revalidate();
         body.repaint();
+    }
+
+    private void logout() {
+        // Hiển thị hộp thoại xác nhận
+        int confirm = javax.swing.JOptionPane.showConfirmDialog(this, 
+            "Bạn có chắc chắn muốn đăng xuất?", 
+            "Xác nhận đăng xuất", 
+            javax.swing.JOptionPane.YES_NO_OPTION);
+        
+        // Nếu người dùng chọn "Có", thực hiện đăng xuất
+        if (confirm == javax.swing.JOptionPane.YES_OPTION) {
+            this.dispose(); // Đóng cửa sổ hiện tại
+            new main.Login().setVisible(true); // Hiển thị lại màn hình đăng nhập
+        }
+    }
+
+    public void editSelectedSubject(ComplexSubject subject) {
+        Form_4 form4 = new Form_4();
+        form4.showComplexSubject(subject); // Hiển thị thông tin đối tượng đã chọn
+        showForm(form4); // Hiển thị Form_4
+        
+        // Thêm đoạn mã để cập nhật bảng danh sách đối tượng sau khi sửa
+        form4.setComplexSubjectDao(new ComplexSubjectDao() {
+            @Override
+            public void edit(ComplexSubject updatedSubject) {
+                super.edit(updatedSubject);
+                // Cập nhật bảng danh sách đối tượng ở đây
+                updateSubjectList(updatedSubject);
+            }
+        });
+    }
+
+    private void updateSubjectList(ComplexSubject updatedSubject) {
+        // Cập nhật bảng danh sách đối tượng với thông tin mới
+        // Thực hiện logic để cập nhật bảng danh sách
     }
      
     @SuppressWarnings("unchecked")

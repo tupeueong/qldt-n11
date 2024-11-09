@@ -33,6 +33,16 @@ public class ComplexSubject implements Serializable {
     public ComplexSubject() {   
     }
 
+    public ComplexSubject(String hoTen, String ngaySinh, String gioiTinh, String noio, String hoKhauThuongTru, String thanNhan, String loaiDoiTuong) {
+        this.hoTen = hoTen;
+        this.ngaySinh = ngaySinh;
+        this.gioiTinh = gioiTinh;
+        this.noio = noio;
+        this.hoKhauThuongTru = hoKhauThuongTru;
+        this.thanNhan = thanNhan;
+        this.loaiDoiTuong = loaiDoiTuong;
+    }
+
     // Getter và Setter
     public int getId() {
         return id;
