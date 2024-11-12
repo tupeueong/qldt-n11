@@ -20,7 +20,7 @@ import model.ComplexSubjectXML;
 import utils.FileUtils;
 
 public class ComplexSubjectDao {
-    private static final String COMPLEX_SUBJECT_FILE_NAME = "D:/Download(D)/Documents/NetBeansProjects/login-ui/src/main/java/DB/complexSubject.xml";
+    private static final String COMPLEX_SUBJECT_FILE_NAME = "D:/Download(D)/Documents/NetBeansProjects/login-ui/src/main/resources/DB/complexSubject.xml";
     private List<ComplexSubject> listComplexSubjects;
 
     public ComplexSubjectDao() {
@@ -74,7 +74,7 @@ public class ComplexSubjectDao {
 
         try {
             // Mở file XML
-            File xmlFile = new File("D:/Download(D)/Documents/NetBeansProjects/login-ui/src/main/java/DB/complexSubject.xml");
+            File xmlFile = new File("D:/Download(D)/Documents/NetBeansProjects/login-ui/src/main/resources/DB/complexSubject.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(xmlFile);
@@ -118,6 +118,7 @@ public class ComplexSubjectDao {
         original.setHoKhauThuongTru(updated.getHoKhauThuongTru());
         original.setThanNhan(updated.getThanNhan());
         original.setLoaiDoiTuong(updated.getLoaiDoiTuong());
+        original.setGioiTinh(updated.getGioiTinh());
     }
 
     public boolean delete(ComplexSubject complexSubject) {

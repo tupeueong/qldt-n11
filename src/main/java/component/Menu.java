@@ -26,13 +26,13 @@ public class Menu extends javax.swing.JPanel {
     }
     public void initMenu(EventMenu event) {
         this.event = event;
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/1.png")), "Dashboard", 0);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/3.png")), "Quản Lý Đối Tượng", 1); 
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/4.png")), "Thống kê", 2);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/5.png")), "Note", 3);
+        addMenu(new ImageIcon(getClass().getResource("/images/1.png")), "Dashboard", 0);
+        addMenu(new ImageIcon(getClass().getResource("/images/3.png")), "Quản Lý Đối Tượng", 1); 
+        addMenu(new ImageIcon(getClass().getResource("/images/4.png")), "Thống kê", 2);
+        addMenu(new ImageIcon(getClass().getResource("/images/5.png")), "Note", 3);
         addEmpty();
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/8.png")), "Setting", 4);
-        addMenu(new ImageIcon(getClass().getResource("/com/raven/icon/logout.png")), "Logout", 5);
+        addMenu(new ImageIcon(getClass().getResource("/images/8.png")), "Setting", 4);
+        addMenu(new ImageIcon(getClass().getResource("/images/logout.png")), "Logout", 5);
     }
     private void addEmpty() {
         panelMenu.add(new JLabel(), "push");
@@ -115,7 +115,7 @@ public class Menu extends javax.swing.JPanel {
 
         imageAvatar1.setForeground(new java.awt.Color(234, 234, 234));
         imageAvatar1.setBorderSize(2);
-        imageAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/i5eqdtk854s21.png"))); // NOI18N
+        imageAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/i5eqdtk854s21.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(250, 250, 250));

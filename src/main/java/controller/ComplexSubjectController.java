@@ -106,15 +106,17 @@ import model.ComplexSubject;
 import view.ComplexSubjectFrame;
 import form.Form_3;
 
+
 public class ComplexSubjectController {
     private ComplexSubjectDao complexSubjectDao;
     private Form_3 form_3;
+    
 
     public ComplexSubjectController(Form_3 view) {
         this.form_3 = view;
         complexSubjectDao = new ComplexSubjectDao();
 
-        form_3.addAddComplexSubjectListener(new AddComplexSubjectListener());
+//        form_3.addAddComplexSubjectListener(new AddComplexSubjectListener());
 //        form_3.addEditComplexSubjectListener(new EditComplexSubjectListener());
 //        form_3.addDeleteComplexSubjectListener(new DeleteComplexSubjectListener());
 //        form_3.addClearListener(new ClearComplexSubjectListener());
@@ -129,47 +131,48 @@ public class ComplexSubjectController {
         form_3.showListComplexSubjects(complexSubjectList);
     }
 
-    class AddComplexSubjectListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            ComplexSubject complexSubject = form_3.getComplexSubjectInfo(); // Sửa ở đây
-            if (complexSubject != null) {
-                complexSubjectDao.add(complexSubject);
-                form_3.showComplexSubject(complexSubject); // Sửa ở đây
-                form_3.showListComplexSubjects(complexSubjectDao.getListComplexSubjects());
-                form_3.showMessage("Thêm thành công!");
-            }
-        }
-    }
-
-    class EditComplexSubjectListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            ComplexSubject complexSubject = form_3.getComplexSubjectInfo(); // Sửa ở đây
-            if (complexSubject != null) {
-                complexSubjectDao.edit(complexSubject);
-                form_3.showComplexSubject(complexSubject); // Sửa ở đây
-                form_3.showListComplexSubjects(complexSubjectDao.getListComplexSubjects());
-                form_3.showMessage("Cập nhật thành công!");
-            }
-        }
-    }
-
-    class DeleteComplexSubjectListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            ComplexSubject complexSubject = form_3.getComplexSubjectInfo(); // Sửa ở đây
-            if (complexSubject != null) {
-//                complexSubjectDao.delete(form_3);
-                form_3.clearComplexSubjectInfo(); // Sửa ở đây
-                form_3.showListComplexSubjects(complexSubjectDao.getListComplexSubjects());
-                form_3.showMessage("Xóa thành công!");
-            }
-        }
-    }
-
-    class ClearComplexSubjectListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            form_3.clearComplexSubjectInfo(); // Sửa ở đây
-        }
-    }
+//    class AddComplexSubjectListener implements ActionListener {
+//        public void actionPerformed(ActionEvent e) {
+//            ComplexSubject complexSubject = form_3.getComplexSubjectInfo(); // Sửa ở đây
+//            if (complexSubject != null) {
+//                complexSubjectDao.add(complexSubject);
+//                form_3.showComplexSubject(complexSubject); // Sửa ở đây
+//                form_3.showListComplexSubjects(complexSubjectDao.getListComplexSubjects());
+//                form_3.showMessage("Thêm thành công!");
+//                
+//            }
+//        }
+//    }
+//
+//    class EditComplexSubjectListener implements ActionListener {
+//        public void actionPerformed(ActionEvent e) {
+//            ComplexSubject complexSubject = form_3.getComplexSubjectInfo(); // Sửa ở đây
+//            if (complexSubject != null) {
+//                complexSubjectDao.edit(complexSubject);
+//                form_3.showComplexSubject(complexSubject); // Sửa ở đây
+//                form_3.showListComplexSubjects(complexSubjectDao.getListComplexSubjects());
+//                form_3.showMessage("Cập nhật thành công!");
+//            }
+//        }
+//    }
+//
+//    class DeleteComplexSubjectListener implements ActionListener {
+//        public void actionPerformed(ActionEvent e) {
+//            ComplexSubject complexSubject = form_3.getComplexSubjectInfo(); // Sửa ở đây
+//            if (complexSubject != null) {
+////                complexSubjectDao.delete(form_3);
+//                form_3.clearComplexSubjectInfo(); // Sửa ở đây
+//                form_3.showListComplexSubjects(complexSubjectDao.getListComplexSubjects());
+//                form_3.showMessage("Xóa thành công!");
+//            }
+//        }
+//    }
+//
+//    class ClearComplexSubjectListener implements ActionListener {
+//        public void actionPerformed(ActionEvent e) {
+//            form_3.clearComplexSubjectInfo(); // Sửa ở đây
+//        }
+//    }
 
     class SortComplexSubjectByNameListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {

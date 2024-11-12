@@ -50,7 +50,7 @@ public class Background extends JComponent {
     private BufferedImage bufferedImage;
     private Component blur;
     public Background() {
-        image = new ImageIcon(getClass().getResource("/login/img/img2.jpg"));
+        image = new ImageIcon(getClass().getResource("/images/img2.jpg"));
     }
     
      private void createImage() {

@@ -28,10 +28,13 @@ public class LoginController {
         if (userDao.checkUser(user)) {
             ComplexSubjectFrame complexSubjectFrame = new ComplexSubjectFrame();  
             complexSubjectFrame.setVisible(true);
+            view.dispose(); // Đóng cửa sổ đăng nhập sau khi đăng nhập thành công
             
         } else {
-            JOptionPane.showMessageDialog(view, "Username hoặc password không đúng.", "Lỗi Đăng Nhập", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(view, "Username hoặc password không đúng. Vui lòng đăng nhập lại.", "Lỗi Đăng Nhập", JOptionPane.ERROR_MESSAGE);
+            view.setVisible(true);
         }
+    
     }
 
     private void showError(String message) {

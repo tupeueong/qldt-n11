@@ -2,7 +2,7 @@
 <complexSubjects>
     <complexSubject>
         <id>1</id>
-        <hoTen>Nguyễn hữu đăng khoa</hoTen>
+        <hoTen>Nguyễn Hữu Đăng Khoa</hoTen>
         <ngaySinh>09-11-2024</ngaySinh>
         <gioiTinh>Nam</gioiTinh>
         <noio>yên bái</noio>
@@ -12,22 +12,52 @@
     </complexSubject>
     <complexSubject>
         <id>2</id>
-        <hoTen>nguyễn văn a</hoTen>
+        <hoTen>Nguyễn Văn A</hoTen>
         <ngaySinh>09-11-2024</ngaySinh>
         <gioiTinh>Nam</gioiTinh>
-        <noio>hn</noio>
-        <hoKhauThuongTru>hn</hoKhauThuongTru>
-        <thanNhan>khoa</thanNhan>
+        <noio>Hà nội</noio>
+        <hoKhauThuongTru>Hà nội</hoKhauThuongTru>
+        <thanNhan>Khoa</thanNhan>
         <loaiDoiTuong>Nghiện</loaiDoiTuong>
     </complexSubject>
     <complexSubject>
         <id>3</id>
-        <hoTen>nguyễn đức mạnh 5</hoTen>
-        <ngaySinh>09-11-2024</ngaySinh>
+        <hoTen>Nguyễn Đức Mạnh </hoTen>
+        <ngaySinh>06-11-2024</ngaySinh>
         <gioiTinh>Nam</gioiTinh>
-        <noio>hà nội</noio>
-        <hoKhauThuongTru>hà nội</hoKhauThuongTru>
-        <thanNhan></thanNhan>
+        <noio>Hà nội</noio>
+        <hoKhauThuongTru>Hà nội</hoKhauThuongTru>
+        <thanNhan>Duy</thanNhan>
         <loaiDoiTuong>Tiền án</loaiDoiTuong>
+    </complexSubject>
+    <complexSubject>
+        <id>7</id>
+        <hoTen>Đặng Cao N</hoTen>
+        <ngaySinh>12-11-2024</ngaySinh>
+        <gioiTinh>Nam</gioiTinh>
+        <noio>Hà nội</noio>
+        <hoKhauThuongTru>Yên Bái</hoKhauThuongTru>
+        <thanNhan></thanNhan>
+        <loaiDoiTuong>Tiền sự</loaiDoiTuong>
+    </complexSubject>
+    <complexSubject>
+        <id>5</id>
+        <hoTen>Nguyễn Kim Thành Đạt</hoTen>
+        <ngaySinh>12-11-2024</ngaySinh>
+        <gioiTinh>Nam</gioiTinh>
+        <noio>Hà Nội</noio>
+        <hoKhauThuongTru>Hà Nội</hoKhauThuongTru>
+        <thanNhan>Mạnh</thanNhan>
+        <loaiDoiTuong>Đặc biệt</loaiDoiTuong>
+    </complexSubject>
+    <complexSubject>
+        <id>6</id>
+        <hoTen>Nguyễn Hữu Đạt</hoTen>
+        <ngaySinh>12-05-2005</ngaySinh>
+        <gioiTinh>Nam</gioiTinh>
+        <noio>Hồ Chí Minh</noio>
+        <hoKhauThuongTru>Hà Nội</hoKhauThuongTru>
+        <thanNhan>Không</thanNhan>
+        <loaiDoiTuong>Nghiện</loaiDoiTuong>
     </complexSubject>
 </complexSubjects>

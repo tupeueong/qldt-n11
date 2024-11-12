@@ -1,32 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package form;
 
-/**
- *
- * @author Manh
- */
 import dao.ComplexSubjectDao;
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import model.ComplexSubject;
 import view.ComplexSubjectFrame;
 public class Form_4 extends javax.swing.JPanel {
-
-    /**
-     * Creates new form Form_4
-     */
+    
     private ComplexSubjectDao complexSubjectDao;
 
     public Form_4() {
         initComponents();
+//        setOpaque(false);
         complexSubjectDao = new ComplexSubjectDao();
     }
+//    private Form_3 form3;
+//    public Form_4(Form_3 form3) {
+//        this.form3 = form3; // Gán tham chiếu
+//        initComponents();
+//        setOpaque(false);
+//    }
+//    
     public String getSelectedGender() {
         if (nam.isSelected()) {
             return "Nam";
@@ -39,7 +37,7 @@ public class Form_4 extends javax.swing.JPanel {
         txName3.setText(selectedSubject.getHoTen());
         txNgaySinh3.setText(selectedSubject.getNgaySinh());
         txNoio3.setText(selectedSubject.getNoio());
-        txdoituong3.setText(selectedSubject.getLoaiDoiTuong());
+        txdoituong3.setSelectedItem(selectedSubject.getLoaiDoiTuong());
         txthannhan3.setText(selectedSubject.getThanNhan());
         txHokhau3.setText(selectedSubject.getHoKhauThuongTru());
         textID.setText(String.valueOf(selectedSubject.getId()));
@@ -61,6 +59,7 @@ public class Form_4 extends javax.swing.JPanel {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        dateChooser1 = new com.raven.datechooser.DateChooser();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -72,7 +71,6 @@ public class Form_4 extends javax.swing.JPanel {
         nam = new javax.swing.JRadioButton();
         nu = new javax.swing.JRadioButton();
         txName3 = new javax.swing.JTextField();
-        txdoituong3 = new javax.swing.JTextField();
         txthannhan3 = new javax.swing.JTextField();
         jScrollPane7 = new javax.swing.JScrollPane();
         txNoio3 = new javax.swing.JTextArea();
@@ -83,6 +81,9 @@ public class Form_4 extends javax.swing.JPanel {
         txNgaySinh3 = new javax.swing.JTextField();
         textID = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        txdoituong3 = new javax.swing.JComboBox<>();
+
+        dateChooser1.setTextRefernce(txNgaySinh3);
 
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin đối tượng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -144,12 +145,6 @@ public class Form_4 extends javax.swing.JPanel {
             }
         });
 
-        txdoituong3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txdoituong3ActionPerformed(evt);
-            }
-        });
-
         txNoio3.setColumns(20);
         txNoio3.setRows(5);
         jScrollPane7.setViewportView(txNoio3);
@@ -172,6 +167,12 @@ public class Form_4 extends javax.swing.JPanel {
             }
         });
 
+        txNgaySinh3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txNgaySinh3ActionPerformed(evt);
+            }
+        });
+
         textID.setEditable(false);
         textID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,6 +183,13 @@ public class Form_4 extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("ID :");
+
+        txdoituong3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chọn loại đối tượng ..", "Tiền án, tiền sử", "Nghiện", "Ăn trộm, ăn cướp", "Đặc biệt", " " }));
+        txdoituong3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txdoituong3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -220,8 +228,8 @@ public class Form_4 extends javax.swing.JPanel {
                                     .addComponent(jLabel18)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txdoituong3, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                                        .addComponent(txNgaySinh3)))))
+                                        .addComponent(txNgaySinh3, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                                        .addComponent(txdoituong3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -307,36 +315,63 @@ public class Form_4 extends javax.swing.JPanel {
 
     }//GEN-LAST:event_txName3ActionPerformed
 
-    private void txdoituong3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txdoituong3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txdoituong3ActionPerformed
-
     private void txSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txSuaActionPerformed
         // Lấy thông tin từ các trường nhập liệu
         int ID = Integer.parseInt(textID.getText());
         String hoTen = txName3.getText();
         String ngaySinh = txNgaySinh3.getText();
         String noiO = txNoio3.getText();
-        String doiTuong = txdoituong3.getText();
+        String doiTuong = (String)txdoituong3.getSelectedItem();
         String thanNhan = txthannhan3.getText();
         String hoKhau = txHokhau3.getText();
         String gioiTinh = getSelectedGender();
-        
-        // Tạo một đối tượng ComplexSubject mới với thông tin đã nhập
+        System.out.println(gioiTinh);
+//        ComplexSubject newSubject = new ComplexSubject();
+//        newSubject.setHoTen(hoTen);
+//        newSubject.setNgaySinh(ngaySinh);
+//        newSubject.setNoio(noiO);
+//        newSubject.setHoKhauThuongTru(hoKhau);
+//        newSubject.setThanNhan(thanNhan);
+//        newSubject.setLoaiDoiTuong(doiTuong);
+//        newSubject.setGioiTinh(gioiTinh);
+//        
+//        ComplexSubjectDao complexSubjectDao = new ComplexSubjectDao();
+//        complexSubjectDao.edit(newSubject);
+//        list.removeIf(subject -> subject.getId() == ID);
+//        list.add(newSubject);
+//        if (form3 != null) {
+//            form3.showListComplexSubjects(list);
+//            form3.setVisible(true);
+//        }
+//
+//    // Hiển thị thông báo thành công
+//    javax.swing.JOptionPane.showMessageDialog(this, "Sửa đối tượng thành công!");
+    
+    
+        //Tạo một đối tượng ComplexSubject mới với thông tin đã nhập
         ComplexSubject complexSubject = new ComplexSubject( ID , hoTen,  ngaySinh,  gioiTinh,  noiO,  hoKhau,  thanNhan,  doiTuong);
         
-        // Gọi phương thức sửa của DAO để sửa thông tin
-        complexSubjectDao.edit(complexSubject);
+        System.out.println(complexSubject.getGioiTinh());
         
-        // Thông báo cho người dùng rằng đã sửa thành công
-        JOptionPane.showMessageDialog(this, "Sửa thành công!");
+        // Hiển thị thông báo xác nhận trước khi sửa
+        int confirm = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn sửa không?", "Xác nhận sửa", JOptionPane.YES_NO_OPTION);
+        
+        // Nếu người dùng chọn Yes, thì thực hiện sửa
+        if (confirm == JOptionPane.YES_OPTION) {
+            // Gọi phương thức sửa của DAO để sửa thông tin
+            complexSubjectDao.edit(complexSubject);
+        
+            // Thông báo cho người dùng rằng đã sửa thành công
+            JOptionPane.showMessageDialog(this, "Sửa thành công!");
+        }
+  
     }//GEN-LAST:event_txSuaActionPerformed
 
     private void txReset3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txReset3ActionPerformed
         txHokhau3.setText("");
         txName3.setText("");
         txNoio3.setText("");
-        txdoituong3.setText("");
+        txdoituong3.setSelectedIndex(0);
         txthannhan3.setText("");
 
     }//GEN-LAST:event_txReset3ActionPerformed
@@ -349,9 +384,18 @@ public class Form_4 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_textIDActionPerformed
 
+    private void txNgaySinh3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNgaySinh3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txNgaySinh3ActionPerformed
+
+    private void txdoituong3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txdoituong3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txdoituong3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private com.raven.datechooser.DateChooser dateChooser1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -372,7 +416,7 @@ public class Form_4 extends javax.swing.JPanel {
     private javax.swing.JTextArea txNoio3;
     private javax.swing.JButton txReset3;
     private javax.swing.JButton txSua;
-    private javax.swing.JTextField txdoituong3;
+    private javax.swing.JComboBox<String> txdoituong3;
     private javax.swing.JTextField txthannhan3;
     // End of variables declaration//GEN-END:variables
 }

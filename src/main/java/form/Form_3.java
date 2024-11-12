@@ -181,15 +181,18 @@ public class Form_3 extends javax.swing.JPanel {
 
     private void jbcThemdoituongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbcThemdoituongActionPerformed
         Form_2 form2 = new Form_2();
-    // Tạo một JDialog để hiển thị Form_2
         JDialog dialog = new JDialog();
         dialog.setTitle("Thêm Đối Tượng");
         dialog.setContentPane(form2);
-        dialog.setModal(true); // Để cửa sổ này là modal
-        dialog.pack(); // Đặt kích thước cho dialog
-        dialog.setLocationRelativeTo(this); // Đặt vị trí của dialog ở giữa Form_3
-        dialog.setVisible(true); //
-    showListComplexSubjects(complexSubjectDao.getListComplexSubjects());
+        dialog.setModal(true);
+        dialog.pack();
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true); // Hiển thị dialog
+
+        // Cập nhật danh sách sau khi Form_2 đóng
+        List<ComplexSubject> updatedList = complexSubjectDao.getListComplexSubjects();
+        showListComplexSubjects(updatedList);
+        System.out.println("Danh sách đã được cập nhật sau khi thêm đối tượng.");
     }//GEN-LAST:event_jbcThemdoituongActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -336,6 +339,7 @@ public class Form_3 extends javax.swing.JPanel {
         }
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(data, columnNames));
+        System.out.println("Cập nhật danh sách với " + complexSubjects.size() + " đối tượng.");
     }
     
 

@@ -28,7 +28,7 @@ public class Header extends javax.swing.JPanel {
 
         buttonBadges1.setBackground(new java.awt.Color(51, 51, 51));
         buttonBadges1.setForeground(new java.awt.Color(242, 6, 37));
-        buttonBadges1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/message.png"))); // NOI18N
+        buttonBadges1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/message.png"))); // NOI18N
         buttonBadges1.setBadges(15);
         buttonBadges1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -38,7 +38,7 @@ public class Header extends javax.swing.JPanel {
 
         buttonBadges2.setBackground(new java.awt.Color(51, 51, 51));
         buttonBadges2.setForeground(new java.awt.Color(7, 131, 232));
-        buttonBadges2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/raven/icon/noti.png"))); // NOI18N
+        buttonBadges2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/noti.png"))); // NOI18N
         buttonBadges2.setBadges(5);
         buttonBadges2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

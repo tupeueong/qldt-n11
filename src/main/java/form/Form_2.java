@@ -5,6 +5,7 @@
 package form;
 
 import dao.ComplexSubjectDao;
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTextArea;
@@ -17,10 +18,8 @@ import view.ComplexSubjectFrame;
  * @author Manh
  */
 public class Form_2 extends javax.swing.JPanel {
-    private List<ComplexSubject> list = new ArrayList<>();
-    /**
-     * Creates new form Form_2
-     */
+    private List<ComplexSubject> list = new ArrayList<>();      
+
     private Form_3 form3; // Tham chiếu đến Form_3
     public Form_2(){
         initComponents();
@@ -31,34 +30,34 @@ public class Form_2 extends javax.swing.JPanel {
         initComponents();
         setOpaque(false);
     }
-    public JTextField getTxName() {
-        return txName;
-    }
-
-    // Các phương thức getter khác cho các trường khác
-    public JTextField getTxNgaySinh() {
-        return jTextField1; // Thay thế bằng trường thực tế nếu cần
-    }
-
-    public JTextField getTxDoiTuong() {
-        return txdoituong;
-    }
-
-    public JTextField getTxThanNhan() {
-        return txthannhan;
-    }
-
-    public JTextArea getTxNoiO() {
-        return txNoio;
-    }
-
-    public JTextArea getTxHoKhau() {
-        return txHokhau;
-    }
+//    public JTextField getTxName() {
+//        return txName;
+//    }
+//
+//    // Các phương thức getter khác cho các trường khác
+//    public JTextField getTxNgaySinh() {
+//        return jTextField1; // Thay thế bằng trường thực tế nếu cần
+//    }
+//
+//    public JTextField getTxDoiTuong() {
+//        return txdoituong;
+//    }
+//
+//    public JTextField getTxThanNhan() {
+//        return txthannhan;
+//    }
+//
+//    public JTextArea getTxNoiO() {
+//        return txNoio;
+//    }
+//
+//    public JTextArea getTxHoKhau() {
+//        return txHokhau;
+//    }
     public String getSelectedGender() {
         if (jRadioButton1.isSelected()) {
             return "Nam";
-        } else if (jRadioButton2.isSelected()) {
+        } else if (nu2.isSelected()) {
             return "Nữ";
         }
         return "Chưa chọn"; // Trả về nếu không có lựa chọn nào
@@ -79,8 +78,8 @@ public class Form_2 extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jRadioButton2 = new javax.swing.JRadioButton();
         jTextField1 = new javax.swing.JTextField();
-        buttonGroup1 = new javax.swing.ButtonGroup();
         ChonNgay = new com.raven.datechooser.DateChooser();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         roundPanel1 = new swing.complex.RoundPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -91,9 +90,8 @@ public class Form_2 extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        nu2 = new javax.swing.JRadioButton();
         txName = new javax.swing.JTextField();
-        txdoituong = new javax.swing.JTextField();
         txthannhan = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txNoio = new javax.swing.JTextArea();
@@ -102,6 +100,7 @@ public class Form_2 extends javax.swing.JPanel {
         txAdd = new javax.swing.JButton();
         txReset = new javax.swing.JButton();
         txNgaySinh = new javax.swing.JTextField();
+        txdoituong = new javax.swing.JComboBox<>();
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,6 +130,7 @@ public class Form_2 extends javax.swing.JPanel {
         jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         ChonNgay.setForeground(new java.awt.Color(102, 102, 102));
+        ChonNgay.setTextRefernce(txNgaySinh);
 
         roundPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -166,18 +166,19 @@ public class Form_2 extends javax.swing.JPanel {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Hộ khẩu thường trú :");
 
-        buttonGroup1.add(jRadioButton1);
+        buttonGroup2.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setSelected(true);
         jRadioButton1.setText("Nam");
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton3.setText("Nữ");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup2.add(nu2);
+        nu2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        nu2.setForeground(new java.awt.Color(255, 255, 255));
+        nu2.setText("Nữ");
+        nu2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                nu2ActionPerformed(evt);
             }
         });
 
@@ -185,12 +186,6 @@ public class Form_2 extends javax.swing.JPanel {
         txName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txNameActionPerformed(evt);
-            }
-        });
-
-        txdoituong.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txdoituongActionPerformed(evt);
             }
         });
 
@@ -216,6 +211,13 @@ public class Form_2 extends javax.swing.JPanel {
             }
         });
 
+        txdoituong.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chọn loại đối tượng ..", "Tiền án, tiền sử", "Nghiện", "Ăn trộm, ăn cướp", "Đặc biệt" }));
+        txdoituong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txdoituongActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -230,7 +232,7 @@ public class Form_2 extends javax.swing.JPanel {
                                 .addGap(33, 33, 33)
                                 .addComponent(jRadioButton1)
                                 .addGap(34, 34, 34)
-                                .addComponent(jRadioButton3)
+                                .addComponent(nu2)
                                 .addGap(136, 136, 136))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
@@ -257,8 +259,8 @@ public class Form_2 extends javax.swing.JPanel {
                                     .addComponent(jLabel7)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txdoituong, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                                        .addComponent(txNgaySinh)))))
+                                        .addComponent(txNgaySinh, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                                        .addComponent(txdoituong, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,7 +281,7 @@ public class Form_2 extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton3)))
+                            .addComponent(nu2)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -337,9 +339,9 @@ public class Form_2 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void nu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nu2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_nu2ActionPerformed
 
     private void txAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txAddActionPerformed
 //       String hoTen = txName.getText().trim();
@@ -352,7 +354,7 @@ public class Form_2 extends javax.swing.JPanel {
     String noiO = txNoio.getText().trim();
     String hoKhauThuongTru = txHokhau.getText().trim();
     String thanNhan = txthannhan.getText().trim();
-    String loaiDoiTuong = txdoituong.getText().trim();
+    String loaiDoiTuong = (String)txdoituong.getSelectedItem();
     String gioiTinh = getSelectedGender(); // Lấy giới tính đã chọn
     
     // Tạo đối tượng mới
@@ -372,25 +374,24 @@ public class Form_2 extends javax.swing.JPanel {
     if (form3 != null) {
             form3.showListComplexSubjects(list);
             form3.setVisible(true);
+           
         }
 
     // Hiển thị thông báo thành công
     javax.swing.JOptionPane.showMessageDialog(this, "Thêm đối tượng thành công!");
-
+    
+//    form3.showListComplexSubjects(list);
+//    showForm(new Form_3());
+    
     // Reset các trường nhập liệu
-    txResetActionPerformed(evt);
-          
+    txResetActionPerformed(evt);      
     }//GEN-LAST:event_txAddActionPerformed
     
-    private void txdoituongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txdoituongActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txdoituongActionPerformed
-
     private void txResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txResetActionPerformed
         txHokhau.setText("");
         txName.setText("");
         txNoio.setText("");
-        txdoituong.setText("");
+        txdoituong.setSelectedIndex(0);
         txthannhan.setText("");
         
     }//GEN-LAST:event_txResetActionPerformed
@@ -399,10 +400,14 @@ public class Form_2 extends javax.swing.JPanel {
         
     }//GEN-LAST:event_txNameActionPerformed
 
+    private void txdoituongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txdoituongActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txdoituongActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.datechooser.DateChooser ChonNgay;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -417,10 +422,10 @@ public class Form_2 extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JRadioButton nu2;
     private swing.complex.RoundPanel roundPanel1;
     private javax.swing.JButton txAdd;
     private javax.swing.JTextArea txHokhau;
@@ -428,7 +433,11 @@ public class Form_2 extends javax.swing.JPanel {
     private javax.swing.JTextField txNgaySinh;
     private javax.swing.JTextArea txNoio;
     private javax.swing.JButton txReset;
-    private javax.swing.JTextField txdoituong;
+    private javax.swing.JComboBox<String> txdoituong;
     private javax.swing.JTextField txthannhan;
     // End of variables declaration//GEN-END:variables
+
+    public void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
