@@ -32,13 +32,13 @@
     </complexSubject>
     <complexSubject>
         <id>7</id>
-        <hoTen>Đặng Cao N</hoTen>
-        <ngaySinh>12-11-2024</ngaySinh>
-        <gioiTinh>Nam</gioiTinh>
-        <noio>Hà nội</noio>
-        <hoKhauThuongTru>Yên Bái</hoKhauThuongTru>
+        <hoTen>a</hoTen>
+        <ngaySinh>13-11-2024</ngaySinh>
+        <gioiTinh>Nữ</gioiTinh>
+        <noio></noio>
+        <hoKhauThuongTru></hoKhauThuongTru>
         <thanNhan></thanNhan>
-        <loaiDoiTuong>Tiền sự</loaiDoiTuong>
+        <loaiDoiTuong>Chọn loại đối tượng ..</loaiDoiTuong>
     </complexSubject>
     <complexSubject>
         <id>5</id>
@@ -69,5 +69,15 @@
         <hoKhauThuongTru></hoKhauThuongTru>
         <thanNhan></thanNhan>
         <loaiDoiTuong>Chọn loại đối tượng ..</loaiDoiTuong>
+    </complexSubject>
+    <complexSubject>
+        <id>8</id>
+        <hoTen>Khoa Ngu </hoTen>
+        <ngaySinh>13-11-2024</ngaySinh>
+        <gioiTinh>Nam</gioiTinh>
+        <noio></noio>
+        <hoKhauThuongTru></hoKhauThuongTru>
+        <thanNhan>ko</thanNhan>
+        <loaiDoiTuong>Tiền án, tiền sử</loaiDoiTuong>
     </complexSubject>
 </complexSubjects>
